@@ -7,6 +7,7 @@ import shutil
 import requests
 import random
 
+
 #Takes a gis feaature and finds a random streetview image inside that feature
 ##TODO: Put the fine saving/bad counts into another place
 ##TODO: Build in handling for API key elsewhere
