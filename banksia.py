@@ -12,12 +12,12 @@ import random
 ##TODO: Build in handling for API key elsewhere
 ##TODO: Should return an image
 ##TODO: Should also take an array with pitch/fov params etc
-def getRandStreetView(feature, filename, bad_counts):
+def getRandStreetView(feature, filename, bad_counts,apikey):
     rand_lat = random.uniform(feature['properties']['left'], feature['properties']['right'])
     rand_lng = random.uniform(feature['properties']['bottom'], feature['properties']['top'])
 
     params = "size=600x300&location=" + str(rand_lng) + "," + str(
-        rand_lat) + "&pitch=15&heading=151.78&pitch=-0.76&&fov=120&key=AIzaSyB6EO29V2PNnNOwv8SU-s1mhMw1tz69zZY"
+        rand_lat) + "&pitch=15&heading=151.78&pitch=-0.76&&fov=120&key="+apikey
     metaurl = "https://maps.googleapis.com/maps/api/streetview/metadata?" + params
     url = "https://maps.googleapis.com/maps/api/streetview?" + params
 
